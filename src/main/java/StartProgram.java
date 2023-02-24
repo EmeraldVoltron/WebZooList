@@ -38,7 +38,10 @@ public class StartProgram {
 			String species = in.nextLine();
 			System.out.print("Enter the animal to delete: ");
 			String name = in.nextLine();
-
+			
+			ZooAnimals toDelete = new ZooAnimals(species, name);
+			lih.deleteAnimal(toDelete);
+			
 		}
 
 		private static void editAnAnimal() {
@@ -48,49 +51,50 @@ public class StartProgram {
 			System.out.println("2 : Search by Name");
 			int searchBy = in.nextInt();
 			in.nextLine();
-			/*List<ListItem> foundItems;
+			List<ZooAnimals> foundAnimals;
 			if (searchBy == 1) {
-				System.out.print("Enter the store name: ");
-				String storeName = in.nextLine();
+				System.out.print("Enter the species: ");
+				String species = in.nextLine();
+				foundAnimals = lih.searchForAnimalBySpecies(species);
 				
 			} else {
-				System.out.print("Enter the item: ");
-				String itemName = in.nextLine();
-				
+				System.out.print("Enter the name: ");
+				String name = in.nextLine();
+				foundAnimals = lih.searchForAnimalByName(name);
 
 			}
 
-			if (!foundItems.isEmpty()) {
+			if (!foundAnimals.isEmpty()) {
 				System.out.println("Found Results.");
-				for (ListItem l : foundItems) {
+				for (ZooAnimals l : foundAnimals) {
 					System.out.println(l.getId() + " : " + l.toString());
 				}
 				System.out.print("Which ID to edit: ");
 				int idToEdit = in.nextInt();
 
-				ListItem toEdit = lih.searchForItemById(idToEdit);
-				System.out.println("Retrieved " + toEdit.getItem() + " from " + toEdit.getStore());
-				System.out.println("1 : Update Store");
-				System.out.println("2 : Update Item");
+				ZooAnimals toEdit = lih.searchForAnimalById(idToEdit);
+				System.out.println("Retrieved " + toEdit.getName() + " from " + toEdit.getSpecies());
+				System.out.println("1 : Update Species");
+				System.out.println("2 : Update Name");
 				int update = in.nextInt();
 				in.nextLine();
 
 				if (update == 1) {
-					System.out.print("New Store: ");
-					String newStore = in.nextLine();
-					toEdit.setStore(newStore);
+					System.out.print("New Species: ");
+					String newSpecies = in.nextLine();
+					toEdit.setSpecies(newSpecies);
 				} else if (update == 2) {
-					System.out.print("New Item: ");
-					String newItem = in.nextLine();
-					toEdit.setItem(newItem);
+					System.out.print("New Name: ");
+					String newName = in.nextLine();
+					toEdit.setName(newName);
 				}
 
-				lih.updateItem(toEdit);
+				lih.updateAnimal(toEdit);
 
 			} else {
 				System.out.println("---- No results found");
 			}
-*/
+
 		}
 
 		public static void main(String[] args) {
@@ -122,7 +126,7 @@ public class StartProgram {
 				} else if (selection == 4) {
 					viewTheList();
 				} else {
-					//lih.cleanUp();
+					lih.cleanUp();
 					System.out.println("   Goodbye!   ");
 					goAgain = false;
 				}
