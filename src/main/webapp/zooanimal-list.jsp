@@ -8,7 +8,9 @@
 <title>Zoo Animal List</title>
 </head>
 <body>
-
+<h1>Animals at the zoo: </h1>
+<h2>Select the animal you would like to edit, or delete. Or add another animal instead</h2>
+<form method="post" action="navigationServlet">
 <table>
 <c:forEach items="${requestScope.allAnimals}" var="currentAnimal">
 <tr>
@@ -17,8 +19,10 @@
 	<td>${currentAnimal.name}</td>
 </tr>
 </c:forEach>
-
 </table>
-
+<input type="submit" value="edit" name="doThisToItem">
+<input type="submit" value="delete" name="doThisToItem">
+<input type="submit" value="add" name="doThisToItem">
+</form>
 </body>
 </html>
