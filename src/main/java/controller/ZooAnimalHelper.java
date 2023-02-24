@@ -88,5 +88,10 @@ public class ZooAnimalHelper {
 		em.merge(toEdit);
 		em.getTransaction().commit();
 		em.close();
+	
+	}
+	
+	public void cleanUp() {
+		emfactory.close();
 	}
 }
