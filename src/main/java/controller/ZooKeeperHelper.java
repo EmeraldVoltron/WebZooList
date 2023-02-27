@@ -24,7 +24,7 @@ public class ZooKeeperHelper {
 	
 	public List<ZooKeeper> showAllZooKeepers(){
 		EntityManager em = emfactory.createEntityManager();
-		List<ZooKeeper> allKeepers = em.createQuery("SELECT s from ZooKeeper s").getResultList();
+		List<ZooKeeper> allKeepers = em.createQuery("SELECT z from ZooKeeper z").getResultList();
 		return allKeepers;
 	}
 	
@@ -32,7 +32,7 @@ public class ZooKeeperHelper {
 
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		TypedQuery<ZooKeeper> typedQuery = em.createQuery("select sh from ZooKeeper sh where sh.keeperName = :selectedName",ZooKeeper.class);
+		TypedQuery<ZooKeeper> typedQuery = em.createQuery("select zk from ZooKeeper zk where sh.keeperName = :selectedName",ZooKeeper.class);
 		typedQuery.setParameter("selectedName", nameToLookUp);
 		typedQuery.setMaxResults(1);
 		ZooKeeper foundKeeper;
