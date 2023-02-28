@@ -22,5 +22,52 @@ public class ZooKeeper {
 	private int id;
 	private String keeperName;
 	
-	//TO-DO add getters/setters constructors and to string
+	public ZooKeeper() {
+		super();
+	}
+	
+	public ZooKeeper(int id, String keeperName) {
+		super();
+		this.id = id;
+		this.keeperName = keeperName;
+	}
+	
+	public ZooKeeper(String keeperName) {
+		super();
+		this.keeperName = keeperName;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	/**
+	 * @return the keeperName
+	 */
+	public String getKeeperName() {
+		return keeperName;
+	}
+
+	/**
+	 * @param keeperName the keeperName to set
+	 */
+	public void setKeeperName(String keeperName) {
+		this.keeperName = keeperName;
+	}
+
+	@Override
+	public String toString() {
+		return "ZooKeeper [id=" + id + ", keeperName=" + keeperName + "]";
+	}
+
 }
