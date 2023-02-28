@@ -5,13 +5,16 @@
  */
 package model;
 
-import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  * @author abbyb
@@ -24,8 +27,115 @@ public class ZooListDetails {
 	private int id;
 	private String listName;
 	private LocalTime tripDate;
+	@ManyToOne(cascade=CascadeType.PERSIST)
 	private ZooKeeper zooKeeper;
+	@OneToMany(cascade=CascadeType.MERGE, fetch=FetchType.EAGER)
 	private List<ZooAnimals> listOfAnimals;
 
-	//TO-DO getters/setters, to strings, constructors, relationships (oneToMany, manyToOne)
+	
+	public ZooListDetails() {
+		super();
+	}
+	
+	public ZooListDetails(int id, String listName, LocalTime tripDate, ZooKeeper zooKeeper, List<ZooAnimals> listOfAnimals) {
+		super();
+		this.id = id;
+		this.listName = listName;
+		this.tripDate = tripDate;
+		this.zooKeeper = zooKeeper;
+		this.listOfAnimals = listOfAnimals;
+	}
+	
+	public ZooListDetails(String listName, LocalTime tripDate, ZooKeeper zooKeeper, List<ZooAnimals> listOfAnimals) {
+		super();
+		this.listName = listName;
+		this.tripDate = tripDate;
+		this.zooKeeper = zooKeeper;
+		this.listOfAnimals = listOfAnimals;
+	}
+	
+	public ZooListDetails(String listName, LocalTime tripDate, ZooKeeper zooKeeper) {
+		super();
+		this.listName = listName;
+		this.tripDate = tripDate;
+		this.zooKeeper = zooKeeper;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	/**
+	 * @return the listName
+	 */
+	public String getListName() {
+		return listName;
+	}
+
+	/**
+	 * @param listName the listName to set
+	 */
+	public void setListName(String listName) {
+		this.listName = listName;
+	}
+
+	/**
+	 * @return the tripDate
+	 */
+	public LocalTime getTripDate() {
+		return tripDate;
+	}
+
+	/**
+	 * @param tripDate the tripDate to set
+	 */
+	public void setTripDate(LocalTime tripDate) {
+		this.tripDate = tripDate;
+	}
+
+	/**
+	 * @return the zooKeeper
+	 */
+	public ZooKeeper getZooKeeper() {
+		return zooKeeper;
+	}
+
+	/**
+	 * @param zooKeeper the zooKeeper to set
+	 */
+	public void setZooKeeper(ZooKeeper zooKeeper) {
+		this.zooKeeper = zooKeeper;
+	}
+
+	/**
+	 * @return the listOfAnimals
+	 */
+	public List<ZooAnimals> getListOfAnimals() {
+		return listOfAnimals;
+	}
+
+	/**
+	 * @param listOfAnimals the listOfAnimals to set
+	 */
+	public void setListOfAnimals(List<ZooAnimals> listOfAnimals) {
+		this.listOfAnimals = listOfAnimals;
+	}
+
+	@Override
+	public String toString() {
+		return "ZooListDetails [id=" + id + ", listName=" + listName + ", tripDate=" + tripDate + ", zooKeeper="
+				+ zooKeeper + ", listOfAnimals=" + listOfAnimals + "]";
+	}
+	
+	
 }
