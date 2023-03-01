@@ -11,7 +11,7 @@ import model.ZooListDetails;
 
 public class ZooListDetailsHelper {
 	
-	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("zoo");
+	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("WebZooList");
 
 	public void insertNewZooListDetails(ZooListDetails s) {
 		EntityManager em = emfactory.createEntityManager();

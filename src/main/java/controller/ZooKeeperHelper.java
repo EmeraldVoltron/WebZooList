@@ -12,7 +12,7 @@ import model.ZooKeeper;
 
 public class ZooKeeperHelper {
 	
-	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("zoo");
+	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("WebZooList");
 
 	public void insertZooKeeper(ZooKeeper s) {
 		EntityManager em = emfactory.createEntityManager();
