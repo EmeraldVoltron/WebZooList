@@ -19,7 +19,7 @@ import model.ZooAnimals;
  *
  */
 public class ZooAnimalHelper {
-	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("zoo");
+	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("WebZooList");
 	
 	public void insertAnimal(ZooAnimals za) {
 		EntityManager em = emfactory.createEntityManager();
