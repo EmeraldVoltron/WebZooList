@@ -9,7 +9,7 @@
 </head>
 <body>
 <h2>Edit the list using the fields below: </h2>
-<form action="editListDetailsServlet" method="post">
+<form action="editZooListDetailsServlet" method="post">
 <input type="hidden" name="id" value= "${listToEdit.id}">
 List Name: <input type="text" name="listName" value="${listToEdit.listName}"><br />
 

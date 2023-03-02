@@ -11,7 +11,7 @@
 <body>
 <h2>All the lists: </h2>
 <h3>Choose one to either delete, edit or add a new list.</h3>
-<form method = "post" action="navigationServlet">
+<form method = "post" action="listNavigationServlet">
 <table>
 <c:forEach items="${requestScope.allLists}" var="currentList">
 <tr>
@@ -31,7 +31,7 @@
 <input type="submit" value="add" name="doThisToList">
 </form>
 
-<a href="addItemsForListServlet">Create a new List</a>
+<a href="addAnimalsToListServlet">Create a new List</a>
 <a href="index.html">Insert a new animal</a>
 
 </body>
