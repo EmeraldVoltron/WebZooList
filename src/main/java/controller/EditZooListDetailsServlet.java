@@ -87,7 +87,7 @@ public class EditZooListDetailsServlet extends HttpServlet {
 				}
 
 				listToUpdate.setListName(newListName);
-				listToUpdate.setTripDate(ld);
+				listToUpdate.setLastShift(ld);
 				listToUpdate.setZooKeeper(newKeeper);
 
 				dao.updateList(listToUpdate);

@@ -14,7 +14,7 @@ import model.ZooListDetails;
 /**
  * Servlet implementation class ViewAllListsServlets
  */
-@WebServlet("/viewAllListsServlets")
+@WebServlet("/viewAllListsServlet")
 public class ViewAllListsServlets extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
