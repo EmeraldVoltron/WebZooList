@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class ZooListDetails {
 	@GeneratedValue
 	private int id;
 	private String listName;
-	private LocalTime tripDate;
+	private LocalDate tripDate;
 	@ManyToOne(cascade=CascadeType.PERSIST)
 	private ZooKeeper zooKeeper;
 	@OneToMany(cascade=CascadeType.MERGE, fetch=FetchType.EAGER)
@@ -37,7 +38,7 @@ public class ZooListDetails {
 		super();
 	}
 	
-	public ZooListDetails(int id, String listName, LocalTime tripDate, ZooKeeper zooKeeper, List<ZooAnimals> listOfAnimals) {
+	public ZooListDetails(int id, String listName, LocalDate tripDate, ZooKeeper zooKeeper, List<ZooAnimals> listOfAnimals) {
 		super();
 		this.id = id;
 		this.listName = listName;
@@ -46,7 +47,7 @@ public class ZooListDetails {
 		this.listOfAnimals = listOfAnimals;
 	}
 	
-	public ZooListDetails(String listName, LocalTime tripDate, ZooKeeper zooKeeper, List<ZooAnimals> listOfAnimals) {
+	public ZooListDetails(String listName, LocalDate tripDate, ZooKeeper zooKeeper, List<ZooAnimals> listOfAnimals) {
 		super();
 		this.listName = listName;
 		this.tripDate = tripDate;
@@ -54,7 +55,7 @@ public class ZooListDetails {
 		this.listOfAnimals = listOfAnimals;
 	}
 	
-	public ZooListDetails(String listName, LocalTime tripDate, ZooKeeper zooKeeper) {
+	public ZooListDetails(String listName, LocalDate tripDate, ZooKeeper zooKeeper) {
 		super();
 		this.listName = listName;
 		this.tripDate = tripDate;
@@ -92,14 +93,14 @@ public class ZooListDetails {
 	/**
 	 * @return the tripDate
 	 */
-	public LocalTime getTripDate() {
+	public LocalDate getTripDate() {
 		return tripDate;
 	}
 
 	/**
 	 * @param tripDate the tripDate to set
 	 */
-	public void setTripDate(LocalTime tripDate) {
+	public void setTripDate(LocalDate tripDate) {
 		this.tripDate = tripDate;
 	}
 

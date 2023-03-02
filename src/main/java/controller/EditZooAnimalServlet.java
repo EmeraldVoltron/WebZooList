@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletResponse;
 import model.ZooAnimals;
 
 /**
- * Servlet implementation class EditAnimalServlet
+ * Servlet implementation class EditZooAnimalServlet
  */
-@WebServlet("/dditAnimalServlet")
-public class EditAnimalServlet extends HttpServlet {
+@WebServlet("/editZooAnimalServlet")
+public class EditZooAnimalServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public EditAnimalServlet() {
+    public EditZooAnimalServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,19 +36,18 @@ public class EditAnimalServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ZooAnimalHelper dao = new ZooAnimalHelper();
-		
-		String species = request.getParameter("species");
-		String name = request.getParameter("name");
-		Integer tempId = Integer.parseInt(request.getParameter("id"));
-		
-		ZooAnimals animalToUpdate = dao.searchForAnimalById(tempId);
-		animalToUpdate.setSpecies(species);
-		animalToUpdate.setName(name);
-		
-		dao.updateAnimal(animalToUpdate);
-		
-		getServletContext().getRequestDispatcher("/viewAllAnimalsServlet").forward(request, response);
-	}
-
+		// TODO Auto-generated method stub
+				ZooAnimalHelper dao = new ZooAnimalHelper();
+				String species = request.getParameter("species");
+				String name = request.getParameter("name");
+				Integer tempId = Integer.parseInt(request.getParameter("id"));
+				
+				ZooAnimals itemToUpdate = dao.searchForAnimalById(tempId);
+				itemToUpdate.setSpecies(species);
+				itemToUpdate.setName(name);
+				
+				dao.updateAnimal(itemToUpdate);
+				
+				getServletContext().getRequestDispatcher("/viewAllItemsServlet").forward(request, response);
+			}
 }
