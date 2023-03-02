@@ -27,7 +27,7 @@ public class ZooListDetails {
 	@GeneratedValue
 	private int id;
 	private String listName;
-	private LocalDate tripDate;
+	private LocalDate lastShift;
 	@ManyToOne(cascade=CascadeType.PERSIST)
 	private ZooKeeper zooKeeper;
 	@OneToMany(cascade=CascadeType.MERGE, fetch=FetchType.EAGER)
@@ -38,27 +38,27 @@ public class ZooListDetails {
 		super();
 	}
 	
-	public ZooListDetails(int id, String listName, LocalDate tripDate, ZooKeeper zooKeeper, List<ZooAnimals> listOfAnimals) {
+	public ZooListDetails(int id, String listName, LocalDate lastShift, ZooKeeper zooKeeper, List<ZooAnimals> listOfAnimals) {
 		super();
 		this.id = id;
 		this.listName = listName;
-		this.tripDate = tripDate;
+		this.lastShift = lastShift;
 		this.zooKeeper = zooKeeper;
 		this.listOfAnimals = listOfAnimals;
 	}
 	
-	public ZooListDetails(String listName, LocalDate tripDate, ZooKeeper zooKeeper, List<ZooAnimals> listOfAnimals) {
+	public ZooListDetails(String listName, LocalDate lastShift, ZooKeeper zooKeeper, List<ZooAnimals> listOfAnimals) {
 		super();
 		this.listName = listName;
-		this.tripDate = tripDate;
+		this.lastShift = lastShift;
 		this.zooKeeper = zooKeeper;
 		this.listOfAnimals = listOfAnimals;
 	}
 	
-	public ZooListDetails(String listName, LocalDate tripDate, ZooKeeper zooKeeper) {
+	public ZooListDetails(String listName, LocalDate lastShift, ZooKeeper zooKeeper) {
 		super();
 		this.listName = listName;
-		this.tripDate = tripDate;
+		this.lastShift = lastShift;
 		this.zooKeeper = zooKeeper;
 	}
 
@@ -93,15 +93,15 @@ public class ZooListDetails {
 	/**
 	 * @return the tripDate
 	 */
-	public LocalDate getTripDate() {
-		return tripDate;
+	public LocalDate getLastShift() {
+		return lastShift;
 	}
 
 	/**
 	 * @param tripDate the tripDate to set
 	 */
-	public void setTripDate(LocalDate tripDate) {
-		this.tripDate = tripDate;
+	public void setLastShift(LocalDate lastShift) {
+		this.lastShift = lastShift;
 	}
 
 	/**
@@ -134,7 +134,7 @@ public class ZooListDetails {
 
 	@Override
 	public String toString() {
-		return "ZooListDetails [id=" + id + ", listName=" + listName + ", tripDate=" + tripDate + ", zooKeeper="
+		return "ZooListDetails [id=" + id + ", listName=" + listName + ", lastShift=" + lastShift + ", zooKeeper="
 				+ zooKeeper + ", listOfAnimals=" + listOfAnimals + "]";
 	}
 	

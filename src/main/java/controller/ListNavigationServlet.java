@@ -61,9 +61,9 @@ public class ListNavigationServlet extends HttpServlet {
 						Integer tempId = Integer.parseInt(request.getParameter("id"));
 						ZooListDetails listToEdit = dao.searchForListDetailsById(tempId);
 						request.setAttribute("listToEdit", listToEdit);
-						request.setAttribute("month", listToEdit.getTripDate().getMonthValue());
-						request.setAttribute("date", listToEdit.getTripDate().getDayOfMonth());
-						request.setAttribute("year", listToEdit.getTripDate().getYear());
+						request.setAttribute("month", listToEdit.getLastShift().getMonthValue());
+						request.setAttribute("date", listToEdit.getLastShift().getDayOfMonth());
+						request.setAttribute("year", listToEdit.getLastShift().getYear());
 						ZooAnimalHelper daoForAnimals = new ZooAnimalHelper();
 						
 						request.setAttribute("allItems", daoForAnimals.showAllAnimals());
