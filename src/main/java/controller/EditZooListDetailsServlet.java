@@ -92,6 +92,6 @@ public class EditZooListDetailsServlet extends HttpServlet {
 
 				dao.updateList(listToUpdate);
 
-				getServletContext().getRequestDispatcher("/viewAllAnimalsServlet").forward(request, response);
+				getServletContext().getRequestDispatcher("/viewAllListsServlet").forward(request, response);
 			}
 	}

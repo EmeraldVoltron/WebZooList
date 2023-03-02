@@ -51,7 +51,7 @@ public class CreateNewListServlet extends HttpServlet {
 			ld = LocalDate.now();
 		}
 		
-		String[] selectedItems = request.getParameterValues("allItemsToAdd");
+		String[] selectedItems = request.getParameterValues("allAnimalsToAdd");
 		List<ZooAnimals> selectedItemsInList = new ArrayList<ZooAnimals>();
 		
 		if(selectedItems != null && selectedItems.length > 0){

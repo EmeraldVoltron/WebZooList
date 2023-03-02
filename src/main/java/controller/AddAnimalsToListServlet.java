@@ -27,15 +27,15 @@ public class AddAnimalsToListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-				ZooAnimalHelper dao = new ZooAnimalHelper();
+		ZooAnimalHelper dao = new ZooAnimalHelper();
 				
-				request.setAttribute("allItems", dao.showAllAnimals());
+		request.setAttribute("allAnimals", dao.showAllAnimals());
 				
-				if(dao.showAllAnimals().isEmpty()) {
-					request.setAttribute("allItems", "");
-				}
+		if(dao.showAllAnimals().isEmpty()) {
+			request.setAttribute("allAnimals", "");
+		}
 				
-				getServletContext().getRequestDispatcher("/new-list.jsp").forward(request, response);
+		getServletContext().getRequestDispatcher("/new-list.jsp").forward(request, response);
 	}
 
 	/**

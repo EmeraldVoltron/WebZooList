@@ -13,7 +13,7 @@
 <input type="hidden" name="id" value= "${listToEdit.id}">
 List Name: <input type="text" name="listName" value="${listToEdit.listName}"><br />
 
-Zoo Keeper Name = <input type="text" name="keeperName" value="${listToEdit.zooKeeper.keeperName}"><br />
+Zoo Keeper Name: <input type="text" name="keeperName" value="${listToEdit.zooKeeper.keeperName}"><br />
 Last Shift: <input type="text" name="month" placeholder="mm" size="4" value="${month}">
 <input type="text" name="day" placeholder="dd" size="4" value="${date}">
 <input type="text" name="year" placeholder="year" size="4" value="${year}">
@@ -22,7 +22,7 @@ Last Shift: <input type="text" name="month" placeholder="mm" size="4" value="${m
 Available Animals: <br />
 <select name="allAnimalsToAdd" multiple size="6">
 <c:forEach items="${requestScope.allAnimals}" var="currentAnimal">
-	<option value="${currentAnimal.id}">${currentAnimal.store} | ${currentAnimal.item}</option>
+	<option value="${currentAnimal.id}">${currentAnimal.species} | ${currentAnimal.name}</option>
 </c:forEach>
 </select>
 <br />

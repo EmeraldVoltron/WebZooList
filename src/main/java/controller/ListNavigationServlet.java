@@ -66,10 +66,10 @@ public class ListNavigationServlet extends HttpServlet {
 						request.setAttribute("year", listToEdit.getLastShift().getYear());
 						ZooAnimalHelper daoForAnimals = new ZooAnimalHelper();
 						
-						request.setAttribute("allItems", daoForAnimals.showAllAnimals());
+						request.setAttribute("allAnimals", daoForAnimals.showAllAnimals());
 									
 						if(daoForAnimals.showAllAnimals().isEmpty()){
-								request.setAttribute("allItems", " ");
+								request.setAttribute("allAnimals", " ");
 						}
 						getServletContext().getRequestDispatcher("/edit-list.jsp").forward(request, response);
 					} catch (NumberFormatException e) {
@@ -77,7 +77,7 @@ public class ListNavigationServlet extends HttpServlet {
 					} 
 
 				} else if (act.equals("add")) {
-					getServletContext().getRequestDispatcher("/new-list.html").forward(request, response);
+					getServletContext().getRequestDispatcher("/new-list.jsp").forward(request, response);
 				}
 	}
 

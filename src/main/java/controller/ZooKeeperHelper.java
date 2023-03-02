@@ -32,7 +32,7 @@ public class ZooKeeperHelper {
 
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		TypedQuery<ZooKeeper> typedQuery = em.createQuery("select zk from ZooKeeper zk where sh.keeperName = :selectedName",ZooKeeper.class);
+		TypedQuery<ZooKeeper> typedQuery = em.createQuery("select zk from ZooKeeper zk where zk.keeperName = :selectedName",ZooKeeper.class);
 		typedQuery.setParameter("selectedName", nameToLookUp);
 		typedQuery.setMaxResults(1);
 		ZooKeeper foundKeeper;

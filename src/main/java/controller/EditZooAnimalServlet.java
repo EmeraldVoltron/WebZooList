@@ -48,6 +48,6 @@ public class EditZooAnimalServlet extends HttpServlet {
 				
 				dao.updateAnimal(itemToUpdate);
 				
-				getServletContext().getRequestDispatcher("/viewAllItemsServlet").forward(request, response);
+				getServletContext().getRequestDispatcher("/viewAllAnimalsServlet").forward(request, response);
 			}
 }

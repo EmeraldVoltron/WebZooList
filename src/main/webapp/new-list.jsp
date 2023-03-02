@@ -11,7 +11,7 @@
 <h2>Create a new list: </h2>
 <form action = "createNewListServlet" method="post">
 List Name: <input type="text" name = "listName"><br />
-Zoo Keeper Name: <input type="text" name = "shopperName"><br />
+Zoo Keeper Name: <input type="text" name = "keeperName"><br />
 Last Shift: <input type="text" name = "month" placeholder="mm"
 size="4"> <input type="text" name="day" placeholder="dd" size="4">
 <input type="text" name="year" placeholder="yyyy" size="4">
@@ -21,7 +21,7 @@ Available Animals: <br />
 
 <select name="allAnimalsToAdd" multiple size="6">
 <c:forEach items="${requestScope.allAnimals}" var="currentAnimal">
-	<option value = "${currentAnimal.id}">${currentAnimal.store} | ${currentAnimal.item}</option>
+	<option value = "${currentAnimal.id}">${currentAnimal.name} | ${currentAnimal.species}</option>
 </c:forEach>
 </select>
 <br />
