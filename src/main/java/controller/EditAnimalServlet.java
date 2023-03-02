@@ -12,7 +12,7 @@ import model.ZooAnimals;
 /**
  * Servlet implementation class EditAnimalServlet
  */
-@WebServlet("/dditAnimalServlet")
+@WebServlet("/editAnimalServlet")
 public class EditAnimalServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
