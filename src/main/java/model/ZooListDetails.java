@@ -6,7 +6,6 @@
 package model;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -90,15 +89,17 @@ public class ZooListDetails {
 		this.listName = listName;
 	}
 
+	
+
 	/**
-	 * @return the tripDate
+	 * @return the lastShift
 	 */
 	public LocalDate getLastShift() {
 		return lastShift;
 	}
 
 	/**
-	 * @param tripDate the tripDate to set
+	 * @param lastShift the lastShift to set
 	 */
 	public void setLastShift(LocalDate lastShift) {
 		this.lastShift = lastShift;
@@ -137,6 +138,8 @@ public class ZooListDetails {
 		return "ZooListDetails [id=" + id + ", listName=" + listName + ", lastShift=" + lastShift + ", zooKeeper="
 				+ zooKeeper + ", listOfAnimals=" + listOfAnimals + "]";
 	}
+
+	
 	
 	
 }
