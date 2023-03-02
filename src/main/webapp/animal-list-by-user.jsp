@@ -11,7 +11,7 @@
 <body>
 <h2>All the lists: </h2>
 <h3>Choose one to either delete, edit or add a new list.</h3>
-<form method = "post" action="listnavigationServlet">
+<form method = "post" action="navigationServlet">
 <table>
 <c:forEach items="${requestScope.allLists}" var="currentList">
 <tr>
