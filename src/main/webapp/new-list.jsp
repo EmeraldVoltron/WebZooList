@@ -21,7 +21,7 @@ Available Animals: <br />
 
 <select name="allAnimalsToAdd" multiple size="6">
 <c:forEach items="${requestScope.allAnimals}" var="currentAnimal">
-	<option value = "${currentAnimal.id}">${currentAnimal.store} | ${currentAnimal.item}</option>
+	<option value = "${currentAnimal.id}">${currentAnimal.name} | ${currentAnimal.species}</option>
 </c:forEach>
 </select>
 <br />

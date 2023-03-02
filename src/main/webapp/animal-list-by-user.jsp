@@ -21,7 +21,7 @@
 <tr><td colspan="3">Last Shift Date: ${currentList.lastShift}</td></tr>
 <tr><td colspan="3">Zoo Keeper: ${currentList.zooKeeper.keeperName}</td></tr>
 <c:forEach var="listVal" items="${currentList.listOfAnimals}">
-<tr><td></td><td colspan="3">${listVal.store}, ${listVal.item}</td></tr>
+<tr><td></td><td colspan="3">${listVal.species}, ${listVal.name}</td></tr>
 </c:forEach>
 </c:forEach>
 </table>
