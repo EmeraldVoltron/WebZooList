@@ -4,7 +4,7 @@
   <artifactId>webzoolist</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  <name>Web Zoo List</name>
+  <name>WebZooList</name>
   <description>Web zoo list mini group project - week 7</description>
   <build>
     <plugins>
